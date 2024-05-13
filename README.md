@@ -36,4 +36,5 @@ I tried making an image and cloning but could not get working, so just loaded OS
   - `sudo apt install sshpass`
 - add in `ansible.cfg` and `hosts.ini`
 - install some requirements for ansible:
+  - `ansible-galaxy collection install kubernetes.core`
   - `ansible-galaxy install -r ./collections/requirements.yml`
