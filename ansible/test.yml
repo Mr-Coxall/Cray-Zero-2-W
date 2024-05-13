@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  tasks:
+    - name: 'Test Connection:'
+      shell: 'ls'
+    - name: "Test 2"
+    - shell: echo 'test'
+      register: foo
+    - debug: msg="the echo was {{ foo.stdout }}"

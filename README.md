@@ -38,3 +38,6 @@ I tried making an image and cloning but could not get working, so just loaded OS
 - install some requirements for ansible:
   - `ansible-galaxy collection install kubernetes.core`
   - `ansible-galaxy install -r ./collections/requirements.yml`
+
+When running Ansible playbooks, ensure to include the following flag:
+- `ansible-playbook test.yml -i inventory/my-cluster/hosts.ini --extra-vars "ansible_user=root ansible_password=Room212!" --check`
