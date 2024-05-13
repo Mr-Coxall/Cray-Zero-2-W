@@ -24,3 +24,16 @@ I tried making an image and cloning but could not get working, so just loaded OS
 ![Fully Automated K3S etcd High Availability Install](https://img.youtube.com/vi/CbkEWcUZ7zM/0.jpg)
 
 - based on this repo: https://github.com/techno-tim/k3s-ansible
+
+
+## Create Admin Machine
+- created a Debian instance on Windows using WSL
+- ensure you are logged in as root
+- install Ansible
+  - `sudo apt update`
+  - `sudo apt upgrade -y`
+  - `sudo apt install ansible`
+  - `sudo apt install sshpass`
+- add in `ansible.cfg` and `hosts.ini`
+- install some requirements for ansible:
+  - `ansible-galaxy install -r ./collections/requirements.yml`
