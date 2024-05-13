@@ -5,15 +5,22 @@
 - ansible playbook
 
 ## Setup Steps
+
+I tried making an image and cloning but could not get working, so just loaded OS on each SD card
 - load Debian Lite SD card
-- login
+- login on Pi 4 with keyboard and monitor
 - set static IP
+  - `sudo nmtui edit "preconfigured"`
+  - set: Address, Gateway, DNS
 - add root password
-- allow root ssh (https://linuxconfig.org/enable-ssh-root-login-on-debian-linux-server)
-- update and upgrade Pi
-- use etcher to backup the image
-- now use etcher to flash the image to each new SD card
-- boot each SD card in a Pi and change:
-  - IP address
-  - Hostname
-- xx
+  - `sudo passwd root`
+- allow root ssh
+  - `sudo nano /etc/ssh/ssd_config`
+  - `PermitRootLogin yes`
+- place in Pi Zero 2 W and confirm I can ssh into it
+
+## Automated build of HA k3s Cluster with `kube-vip` and MetalLB
+
+![Fully Automated K3S etcd High Availability Install](https://img.youtube.com/vi/CbkEWcUZ7zM/0.jpg)
+
+- based on this repo: https://github.com/techno-tim/k3s-ansible
